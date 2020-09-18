@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Skin Disease Detection </h1>
+  <div class="parag" id="para-graph" >
+   <p align='left'>According to dermatology, there are two kinds of skin disorders – temporary and permanent.While the former can be treated through various options, the latter can recur on and off and may need medication for a lifetime.
+   Here we have developed an application which identifies 5 types of skin diseases based on their features namely:
+   <ul>
+       <li><b>Acne</b>-is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells.
+</li>
+       <li><b>Eczema</b>-is a condition wherein patches of skin become inflamed, itchy, cracked, and rough</li>
+       <li><b>Measles</b>-is a highly contagious, serious disease caused by a virus.</li>
+       <li><b>Melanoma</b>-is a type of skin cancer that develops from the pigment-producing cells known as melanocytes.
+</li>
+       <li><b>Psoriasis</b>-is a skin disorder that causes skin cells to multiply up to 10 times faster than normal. This makes the skin build up into bumpy red patches covered with white scales.</li>
+       
+   </ul>
+   </p></div>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+   
+</div>
+
+{% endblock %}
